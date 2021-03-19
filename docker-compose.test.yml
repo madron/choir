@@ -1,0 +1,6 @@
+version: '2'
+
+services:
+  django:
+    environment:
+      - DJANGO_SETTINGS_MODULE=settings.test_docker

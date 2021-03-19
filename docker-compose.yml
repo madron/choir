@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  db:
+    image: postgres:13.2-alpine
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  django:
+    build: .
+    environment:
+      - DEBUG=True
+      - POSTGRES_HOST=db
+    depends_on:
+      - db
+    links:
+      - db
+
+  nginx:
+    build: .
+    depends_on:
+      - django
+    links:
+      - django:django
+    command: nginx
+
+
+volumes:
+  db:
+    driver: local

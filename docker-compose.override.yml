@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  django:
+    ports:
+      - "8000:8000/tcp"
+
+  nginx:
+    ports:
+      - "80:80/tcp"
