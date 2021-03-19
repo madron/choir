@@ -6,6 +6,8 @@ if [ "$1" = 'uwsgi' ]; then
     su-exec uwsgi python3 /src/manage.py wait_for_database
     echo 'Migrate'
     su-exec uwsgi python3 /src/manage.py migrate --noinput
+    echo 'Admin user'
+    su-exec uwsgi python3 /src/manage.py create_default_admin
     echo su-exec nobody $*
     exec su-exec nobody $*
 elif [ "$1" = 'nginx' ]; then
