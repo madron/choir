@@ -11,7 +11,6 @@ if [ "$1" = 'uwsgi' ]; then
     echo su-exec nobody $*
     exec su-exec nobody $*
 elif [ "$1" = 'nginx' ]; then
-    chown nobody /var/tmp/nginx
     exec nginx -c /src/docker/nginx.conf -g "daemon off;"
 else
     exec "$@"
