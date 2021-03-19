@@ -1,0 +1,51 @@
+[
+    {
+        "pk": "score",
+        "model": "repertory.songfiletype",
+        "fields": {
+            "order": 1
+        }
+    },
+    {
+        "pk": "midi",
+        "model": "repertory.songfiletype",
+        "fields": {
+            "order": 2
+        }
+    },
+    {
+        "pk": "choir",
+        "model": "repertory.songfiletype",
+        "fields": {
+            "order": 3
+        }
+    },
+    {
+        "pk": "soprano",
+        "model": "repertory.songfiletype",
+        "fields": {
+            "order": 11
+        }
+    },
+    {
+        "pk": "contralto",
+        "model": "repertory.songfiletype",
+        "fields": {
+            "order": 12
+        }
+    },
+    {
+        "pk": "tenore",
+        "model": "repertory.songfiletype",
+        "fields": {
+            "order": 13
+        }
+    },
+    {
+        "pk": "basso",
+        "model": "repertory.songfiletype",
+        "fields": {
+            "order": 14
+        }
+    }
+]

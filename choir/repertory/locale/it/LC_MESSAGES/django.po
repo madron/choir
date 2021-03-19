@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-19 19:38+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: apps.py:7
+msgid "Repertory"
+msgstr ""
+
+#: models.py:12
+msgid "Score"
+msgstr "Partitura"
+
+#: models.py:13
+msgid "Midi"
+msgstr "Midi"
+
+#: models.py:14
+msgid "Choir"
+msgstr "Coro"
+
+#: models.py:15
+msgid "Soprano"
+msgstr "Soprano"
+
+#: models.py:16
+msgid "Contralto"
+msgstr "Contralto"
+
+#: models.py:17
+msgid "Tenore"
+msgstr "Tenore"
+
+#: models.py:18
+msgid "Basso"
+msgstr "Basso"
+
+#: models.py:26 models.py:38 models.py:50
+msgid "name"
+msgstr "nome"
+
+#: models.py:29
+msgid "period"
+msgstr "periodo"
+
+#: models.py:30 models.py:58
+msgid "periods"
+msgstr "periodi"
+
+#: models.py:41
+msgid "usage"
+msgstr "uso"
+
+#: models.py:42 models.py:59
+msgid "usages"
+msgstr "usi"
+
+#: models.py:51
+msgid "slug"
+msgstr "slug"
+
+#: models.py:52
+msgid "number"
+msgstr "numero"
+
+#: models.py:53
+msgid "page"
+msgstr "pagina"
+
+#: models.py:54
+msgid "score number"
+msgstr "numero partitura"
+
+#: models.py:55
+msgid "tempo"
+msgstr "tempo"
+
+#: models.py:56
+msgid "composer"
+msgstr "autore"
+
+#: models.py:57
+msgid "lyrics writer"
+msgstr "autore testo"
+
+#: models.py:60
+msgid "date added"
+msgstr "data creazione"
+
+#: models.py:61
+msgid "date changed"
+msgstr "data modifica"
+
+#: models.py:64
+msgid "song"
+msgstr "canto"
+
+#: models.py:65
+msgid "songs"
+msgstr "canti"
+
+#: models.py:89
+msgid "file"
+msgstr "file"
+
+#: models.py:90
+msgid "type"
+msgstr "tipo"
+
+#: models.py:93
+msgid "song file"
+msgstr "file canto"
+
+#: models.py:94
+msgid "song files"
+msgstr "file canto"
+
+#~ msgid "score"
+#~ msgstr "partitura"
+
+#~ msgid "Format: %s"
+#~ msgstr "Formato: %s"
+
+#~ msgid "Recording"
+#~ msgstr "Registrazione"

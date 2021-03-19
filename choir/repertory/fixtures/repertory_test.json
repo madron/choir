@@ -1,0 +1,132 @@
+[
+    {
+        "pk": 1,
+        "model": "repertory.period",
+        "fields": {
+            "name": "Standard"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "repertory.period",
+        "fields": {
+            "name": "Lent"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "repertory.usage",
+        "fields": {
+            "name": "Start"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "repertory.usage",
+        "fields": {
+            "name": "End"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "repertory.song",
+        "fields": {
+            "name": "Kyrie eleison",
+            "slug": "kyrie-eleison",
+            "number": "96",
+            "page": 35,
+            "score_number": 21,
+            "periods": [2],
+            "usages": [1, 2]
+        }
+    },
+    {
+        "pk": 2,
+        "model": "repertory.song",
+        "fields": {
+            "name": "Alleluia",
+            "slug": "alleluia"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "repertory.song",
+        "fields": {
+            "name": "Magnificat",
+            "slug": "magnificat",
+            "periods": [1, 2],
+            "usages": [2]
+        }
+    },
+    {
+        "pk": 4,
+        "model": "repertory.song",
+        "fields": {
+            "name": "Iubilate deo",
+            "slug": "iubilate-deo"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "repertory.song",
+        "fields": {
+            "name": "Adoramus te, Domine",
+            "slug": "adoramus-te-domine"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "repertory.song",
+        "fields": {
+            "name": "Ave Verum",
+            "slug": "ave-verum"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "repertory.song",
+        "fields": {
+            "name": "Everybody Hurts",
+            "number": "",
+            "score_number": null,
+            "slug": "everybody-hurts",
+            "page": null
+        }
+    },
+    {
+        "pk": 11,
+        "model": "repertory.songfile",
+        "fields": {
+            "type": "soprano",
+            "file": "songfile/kyrie-eleison-soprani.mp3",
+            "song": 1
+        }
+    },
+    {
+        "pk": 12,
+        "model": "repertory.songfile",
+        "fields": {
+            "type": "contralto",
+            "file": "songfile/kyrie-eleison-contralti.mp3",
+            "song": 1
+        }
+    },
+    {
+        "pk": 13,
+        "model": "repertory.songfile",
+        "fields": {
+            "type": "tenore",
+            "file": "songfile/kyrie-eleison-tenori.mp3",
+            "song": 1
+        }
+    },
+    {
+        "pk": 14,
+        "model": "repertory.songfile",
+        "fields": {
+            "type": "basso",
+            "file": "songfile/kyrie-eleison-bassi.mp3",
+            "song": 1
+        }
+    }
+]
