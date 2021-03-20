@@ -1,6 +1,17 @@
 version: '2'
 
 services:
-  django:
+  db:
+    image: postgres:13.2-alpine
     environment:
+      - POSTGRES_PASSWORD=postgres
+
+  django:
+    build: .
+    environment:
+      - POSTGRES_HOST=db
       - DJANGO_SETTINGS_MODULE=settings.test_docker
+    depends_on:
+      - db
+    links:
+      - db
