@@ -6,7 +6,7 @@ services:
     environment:
       - POSTGRES_PASSWORD=postgres
 
-  django:
+  sut:
     build: .
     environment:
       - POSTGRES_HOST=db
@@ -15,3 +15,4 @@ services:
       - db
     links:
       - db
+    command: /src/docker/coverage.sh
