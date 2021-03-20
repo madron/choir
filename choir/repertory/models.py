@@ -1,10 +1,9 @@
 from datetime import date
-from os.path import join, splitext
+from os.path import splitext
 from django.conf import settings
-from django.urls import reverse
 from django.db import models
 from django.db.models.signals import pre_delete
-from django.utils.safestring import mark_safe
+from django.dispatch import receiver
 from django.utils.text import Truncator
 from django.utils.translation import gettext as _
 
@@ -96,3 +95,9 @@ class SongFile(models.Model):
 
     def __str__(self):
         return self.type
+
+
+@receiver(pre_delete, sender=SongFile)
+def delete_songfile(sender, **kwargs):
+    songfile = kwargs['instance']
+    songfile.file.delete()
