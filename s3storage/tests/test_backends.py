@@ -5,6 +5,7 @@ from .. import backends
 class S3StorageTest(SimpleTestCase):
     @override_settings(
         AWS_S3_ENDPOINT_URL='http://localhost:9000',
+        AWS_QUERYSTRING_AUTH=True,
     )
     def test_url_default(self):
         backend = backends.S3Storage()
@@ -23,6 +24,7 @@ class S3StorageTest(SimpleTestCase):
     @override_settings(
         AWS_S3_ENDPOINT_URL='http://localhost:9000',
         AWS_S3_PUBLIC_URL='https://media.example.com',
+        AWS_QUERYSTRING_AUTH=True,
     )
     def test_url_public(self):
         backend = backends.S3Storage()
