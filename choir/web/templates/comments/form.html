@@ -1,0 +1,34 @@
+{% load comments i18n crispy_forms_tags fluent_comments_tags %}{% load url from future %}
+
+{% if not form.target_object|comments_are_open %}
+    <p>{% trans "Comments are closed." %}</p>
+{% else %}
+<tr>
+    <form action="{% comment_form_target %}" method="post" class="js-comments-form comments-form form-horizontal"
+          data-ajax-action="{% url 'comments-post-comment-ajax' %}">{% csrf_token %}
+      {% if next %}<div><input type="hidden" name="next" value="{{ next }}" /></div>{% endif %}
+      <div class="inline-related tabular">
+      <fieldset class="module">
+      <table>
+      <col style="width:15em">
+      <tr>
+        <td align="right">
+          <div class="form-actions">
+            <div><br /></div>
+            <div><input type="submit" name="preview" class="btn btn-submit" value="{% trans "Preview" %}" /></div>
+            <div><br /></div>
+            <div><input type="submit" name="post" class="btn btn-submit" value="{% trans "Post" %}" /></div>
+            <div><br /></div>
+            <div>{% ajax_comment_tags %}</div>
+          </div>
+        </td>
+        <td>
+          {{ form|crispy }}
+        </td>
+      </tr>
+      </table>
+      </fieldset>
+      </div>
+    </form>
+</tr>
+{% endif %}

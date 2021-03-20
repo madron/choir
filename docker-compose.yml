@@ -1,45 +1,25 @@
-version: '2'
-
-services:
-  db:
-    image: postgres:13.2-alpine
+db:
+    image: postgres:9.4
     environment:
-      - POSTGRES_PASSWORD=postgres
-    volumes:
-      - db:/var/lib/postgresql/data
+        - POSTGRES_DB=choir
+        - POSTGRES_USER=choir
+        - POSTGRES_PASSWORD=choir
 
-  minio:
-    image: minio/minio
-    environment:
-      MINIO_ACCESS_KEY: admin
-      MINIO_SECRET_KEY: admin123
-    volumes:
-      - minio:/export
-    command: server /export
-
-  django:
+uwsgi:
     build: .
+    volumes:
+        - /media
+    links:
+        - db
     environment:
-      - DEBUG=True
-      - POSTGRES_HOST=db
-      - AWS_S3_ENDPOINT_URL=http://minio:9000
-      - AWS_S3_PUBLIC_URL=http://localhost:9000
-      - AWS_QUERYSTRING_AUTH=False
-    depends_on:
-      - db
-    links:
-      - db
-      - minio
+        - DEBUG=True
 
-  nginx:
+nginx:
     build: .
+    volumes_from:
+        - uwsgi
     links:
-      - django
+        - uwsgi
+    ports:
+        - '80:80'
     command: nginx
-
-
-volumes:
-  minio:
-    driver: local
-  db:
-    driver: local

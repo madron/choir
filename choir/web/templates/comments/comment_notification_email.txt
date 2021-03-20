@@ -1,0 +1,9 @@
+{% load url from future %}{% autoescape off %}{{ site }}
+
+{{ comment.user|default:comment.user_name }} ha inserito un commento su "{{ content_object }}".
+http://{{ site.domain }}{{ content_object.get_absolute_url }}
+
+----------------------------
+{{ comment.comment }}
+----------------------------
+{% endautoescape %}

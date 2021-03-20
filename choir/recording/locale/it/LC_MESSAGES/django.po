@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-17 21:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: forms.py:33
+msgid "song file"
+msgstr "file"
+
+#: models.py:8
+msgid "Music"
+msgstr "Musica"
+
+#: models.py:8
+msgid "Soloist"
+msgstr "Solista"
+
+#: models.py:11
+msgid "Ok"
+msgstr "Ok"
+
+#: models.py:12
+msgid "No"
+msgstr "No"
+
+#: models.py:13
+msgid "Review"
+msgstr "Controllare"
+
+#: models.py:14
+msgid "Partial"
+msgstr "Parziale"
+
+#: models.py:15
+msgid "Fix"
+msgstr "Sistemare"
+
+#: models.py:16
+msgid "Improve"
+msgstr "Migliorare"
+
+#: models.py:30
+msgid "importance"
+msgstr "importanza"
+
+#: models.py:31
+msgid "song"
+msgstr "canto"
+
+#: models.py:32
+msgid "completed"
+msgstr "completata"
+
+#: models.py:35
+msgid "recording song"
+msgstr "registrazione"
+
+#: models.py:36
+msgid "recording songs"
+msgstr "registrazioni"
+
+#: models.py:56
+msgid "Recording"
+msgstr "Registrazione"
+
+#: models.py:80
+msgid "music"
+msgstr "musica"
+
+#: models.py:85
+msgid "soloist"
+msgstr "solista"
+
+#: models.py:90
+msgid "soprano"
+msgstr "soprano"
+
+#: models.py:95
+msgid "contralto"
+msgstr "contralto"
+
+#: models.py:100
+msgid "tenore"
+msgstr "tenore"
+
+#: models.py:105
+msgid "basso"
+msgstr "basso"
+
+#: models.py:112
+msgid "order"
+msgstr "ordine"
+
+#: models.py:114
+msgid "type"
+msgstr "tipo"
+
+#: models.py:115
+msgid "status"
+msgstr "stato"
+
+#: models.py:117
+msgid "note"
+msgstr "note"
+
+#: models.py:120
+msgid "recording song part"
+msgstr "parte registrazione"
+
+#: models.py:121
+msgid "recording song parts"
+msgstr "parti registrazione"
+
+#: templates/admin/recording/recordingsong/change_form.html:24
+msgid "Admin"
+msgstr "Amministrazione"
+
+#: templates/admin/recording/recordingsong/change_form.html:26
+msgid "History"
+msgstr ""
+
+#: templates/admin/recording/recordingsong/change_form.html:27
+msgid "View on site"
+msgstr ""

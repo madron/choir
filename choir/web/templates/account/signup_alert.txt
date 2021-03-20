@@ -1,0 +1,4 @@
+Nuova registrazione su {{ site_url }}.
+{{ user }} <{{ user.email }}> attende l'abilitazione.
+
+{{ user.url }}

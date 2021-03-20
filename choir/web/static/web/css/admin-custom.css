@@ -1,0 +1,12 @@
+td.original p {
+    display: none;
+}
+
+div.inline-group .tabular tr.has_original td {
+    padding-top: 0;
+}
+
+div.inline-group .tabular td, th {
+    vertical-align: middle;
+}
+

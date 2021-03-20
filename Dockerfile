@@ -1,26 +1,29 @@
-FROM alpine:3.13
+FROM madron/uwsgi
+MAINTAINER Massimiliano Ravelli <massimiliano.ravelli@gmail.com>
 
 # Packages
-RUN apk add --no-cache su-exec python3 nginx py3-pip uwsgi-python3 py3-psycopg2 tzdata gettext
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y libpq-dev git \
+    && rm -rf /var/lib/apt/lists/*
 
 # Requirements
 COPY requirements /src/requirements
-RUN    pip3 install -r /src/requirements/common.txt \
-    && pip3 install -r /src/requirements/test.txt
-
-ENV DJANGO_SETTINGS_MODULE=settings.docker
+RUN pip install -r /src/requirements/docker.txt
 
 # Source
 COPY . /src
-RUN    chmod 755 /src/manage.py \
-    && chmod 755 /src/docker/entrypoint.sh \
-    && /src/manage.py collectstatic --link --noinput --verbosity=0 \
-    && /src/manage.py compilemessages --verbosity=0
 
-WORKDIR /src/
-VOLUME ["/var/lib/nginx/tmp"]
+# Nginx site
+COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 8000
+# Settings
+ENV DJANGO_SETTINGS_MODULE=settings.docker
+
+# Static files
+RUN /src/manage.py collectstatic --link --noinput --verbosity=0
+
+VOLUME ["/run/uwsgi"]
+VOLUME ["/sqlite"]
 
 ENTRYPOINT ["/src/docker/entrypoint.sh"]
-CMD ["uwsgi", "--plugins", "/usr/lib/uwsgi/python3_plugin.so", "--master", "--processes", "1", "--threads", "8", "--chdir", "/src", "--wsgi", "settings.wsgi", "--http-socket", ":8000", "--stats", ":9191"]
+CMD ["uwsgi", "--master", "--processes", "1", "--threads", "1", "/src/docker/uwsgi.ini"]

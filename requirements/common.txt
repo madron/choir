@@ -1,3 +1,28 @@
-Django==3.1.7
-django_storages==1.11.1
-boto3==1.17.33
+# --extra-index-url=http://dist.pinaxproject.com/dev/
+
+Django==1.4.5
+South==0.7.6
+django-debug-toolbar==0.9.4
+
+django-jquery==1.9.1
+django-autocomplete-light==1.0.25
+django-orderable-inlines==0.0.6
+django-mediaelementjs==2.10.3
+xlwt==0.7.4
+django-fluent-comments==0.8.0
+
+django-forms-bootstrap==2.0.3.post1
+pinax-theme-bootstrap==3.0a4
+django-user-accounts==1.0b8
+-e git+https://github.com/madron/pinax-theme-bootstrap-account.git#egg=pinax-theme-bootstrap-account
+# -e git+https://github.com/CRREL/django-datatables.git#egg=django-datatables
+
+pytz==2013b
+django-appconf==0.6
+
+# django-openid>=0.3a1
+# python-openid>=2.2.5
+
+# django-announcements>=0.1.2
+# django-pagination>=1.0.7
+# django-notification>=0.2

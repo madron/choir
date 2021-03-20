@@ -1,8 +1,0 @@
-[run]
-source = .
-omit =
-    manage.py
-    settings/*
-    */migrations/*
-    authentication/management/commands/wait_for_database.py
-    authentication/management/commands/create_default_admin.py

@@ -1,0 +1,91 @@
+{% extends "site_base.html" %}
+
+{% block head_title %}Repertorio{% endblock %}
+
+{% block extra_style %}
+{{ block.super }}
+<style type="text/css">
+    table th.centered { text-align: center; }
+    table td.centered { text-align: center; }
+    table thead th { background-color: #ccf9cc; }
+</style>
+{% endblock %}
+
+{% block extra_script %}
+{{ block.super }}
+    <script>
+        $('a').popover({trigger: "hover", placement: "right", delay: {show: 300, hide: 0}});
+    </script>
+{% endblock %}
+
+{% block body %}
+
+<div class="page-header">
+    <h1>Repertorio</h1>
+</div>
+
+<div class="row">
+{% if perms.repertory %}
+    <div class="span12">
+{% else %}
+    <div class="span6">
+{% endif %}
+<table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>Canto</th>
+        <th title="Numero" class="centered">N.</th>
+        <th title="Pagina" class="centered">Pag.</th>
+        <th class="centered">Accordi</th>
+        {% if perms.repertory %}
+            <th class="centered">Partitura</th>
+            {% for type in file_types %}
+                <th class="centered">{{ type.1 }}</th>
+            {% endfor %}
+        {% endif %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for song in object_list %}
+        <tr>
+            <th>
+                {% if perms.repertory.change_bar %}
+                    <a href="{% url admin:repertory_song_change song.pk %}" rel="tooltip" title="Modifica" data-content="{{ song.name }}"><i class="icon-edit icon-black"></i></a>
+                {% endif %}
+                {% if perms.recording.change_recordingsong %}
+                    {% if song.recordingsong %}
+                        {{ song.recordingsong.get_link }}
+                    {% else %}
+                        <i class="icon-black"></i>
+                    {% endif %}
+                {% endif %}
+                {% if song.is_new %}
+                    <i class="icon-star-empty icon-black" title="Nuovo"></i>
+                {% else %}
+                    <i class="icon-black"></i>
+                {% endif %}
+                <a href="{{ song.get_absolute_url }}">{{ song.name }}</a>
+            </th>
+            <td class="centered">{{ song.number }}</td>
+            <td class="centered">{{ song.page|default:"" }}</td>
+            <td class="centered">{{ song.get_chords_link }}</td>
+            {% if perms.repertory %}
+                <td class="centered">{{ song.get_score_display }}</td>
+                {% for type in song.get_type_files %}
+                <td class="centered">
+                    {% for file in type.files %}
+                        {{ file.get_link }}
+                    {% endfor %}
+                </td>
+                {% endfor %}
+            {% endif %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+</div>
+
+{% include "pagination/pagination.html" %}
+
+{% endblock %}

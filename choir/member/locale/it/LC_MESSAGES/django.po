@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-10 10:10+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: forms.py:28
+msgid "This field is required."
+msgstr ""
+
+#: models.py:8 models.py:30
+msgid "name"
+msgstr "nome"
+
+#: models.py:9
+msgid "order"
+msgstr "ordine"
+
+#: models.py:12
+msgid "role"
+msgstr "ruolo"
+
+#: models.py:13 models.py:33 models.py:68
+msgid "roles"
+msgstr "ruoli"
+
+#: models.py:28
+msgid "user"
+msgstr "utente"
+
+#: models.py:29
+msgid "surname"
+msgstr "cognome"
+
+#: models.py:31
+msgid "nickname"
+msgstr "soprannome"
+
+#: models.py:34
+msgid "phone number"
+msgstr "telefono"
+
+#: models.py:36
+msgid "mobile number"
+msgstr "cellulare"
+
+#: models.py:38
+msgid "email"
+msgstr ""
+
+#: models.py:39
+msgid "address"
+msgstr "indirizzo"
+
+#: models.py:40
+msgid "city"
+msgstr "città"
+
+#: models.py:41
+msgid "province"
+msgstr "provincia"
+
+#: models.py:42
+msgid "zip code"
+msgstr "cap"
+
+#: models.py:45 models.py:53
+msgid "member"
+msgstr "membro"
+
+#: models.py:46
+msgid "members"
+msgstr "membri"
+
+#: templates/member/mass_mail_preview.html:65
+msgid "Previous"
+msgstr "Indietro"
+
+#: templates/member/member_list.html:62
+msgid "Next"
+msgstr "Avanti"

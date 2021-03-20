@@ -1,4 +1,7 @@
-from .test_common import *
+import os
+from .common import *
+
+DEBUG = True
 
 DATABASES = {
     'default': {
@@ -7,10 +10,4 @@ DATABASES = {
     }
 }
 
-# Debug toolbar
-INSTALLED_APPS.append('debug_toolbar')
-MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
-INTERNAL_IPS = ['127.0.0.1']
-
-# S3 Media
-# DEFAULT_FILE_STORAGE='s3storage.backends.S3Storage'
+MEDIA_URL = '/media/'

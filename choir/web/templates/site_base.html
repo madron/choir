@@ -1,0 +1,35 @@
+{% extends "theme_base.html" %}
+{% load i18n flatpages %}
+{% load url from future %}
+
+{% block extra_head_base %}
+    <link href="{{ STATIC_URL }}web/css/custom.css" rel="stylesheet" type="text/css">
+    {% block extra_head %}{% endblock %}
+{% endblock %}
+
+{% block nav %}
+        <ul class="nav">
+            <li><a href="{% url 'repertory:song_list' %}"><i class="icon-music"></i> Repertorio</a></li>
+            <li><a href="{% url 'member:member_list' %}"><i class="icon-user"></i> Membri</a></li>
+            {% get_flatpages for user as flatpages %}
+            {% for page in flatpages %}
+                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+            {% endfor %}
+        </ul>
+{% endblock %}
+
+{% block body_base %}
+    <div class="container">
+        {% block breadcrumbs %}{% endblock %}
+        {% include "_messages.html" %}
+        {% block body %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% include "_footer.html" %}
+{% endblock %}
+
+{% block extra_body_base %}
+    {% block extra_body %}{% endblock %}
+{% endblock %}

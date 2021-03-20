@@ -1,0 +1,58 @@
+[
+    {
+        "pk": 1,
+        "model": "member.role",
+        "fields": {
+            "order": 1,
+            "name": "Soprano"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "member.role",
+        "fields": {
+            "order": 2,
+            "name": "Contralto"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "member.role",
+        "fields": {
+            "order": 3,
+            "name": "Tenore"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "member.role",
+        "fields": {
+            "order": 4,
+            "name": "Basso"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "member.member",
+        "fields": {
+            "phone_number": "555-123",
+            "surname": "Flinstones",
+            "name": "Frederick",
+            "role": 4,
+            "user": null,
+            "nickname": "Fred",
+            "email": "fred@example.com"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "member.member",
+        "fields": {
+            "phone_number": "",
+            "surname": "Rubble",
+            "name": "Barney",
+            "role": 3,
+            "user": null
+        }
+    }
+]

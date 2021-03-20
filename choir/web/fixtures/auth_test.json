@@ -1,0 +1,95 @@
+[
+    {
+        "pk": 10,
+        "model": "auth.user",
+        "fields": {
+            "username": "tester",
+            "first_name": "Tester",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2000-01-01T12:00:00Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$8bb04$6d8236c0af03dd8d3db24a9981bb7343e5da6f93",
+            "email": "",
+            "date_joined": "2000-01-01T12:00:00Z"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "auth.user",
+        "fields": {
+            "username": "max",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2012-05-01T20:28:57Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$10000$17UB4iRML68U$0oeZeeIb0xy8pFWjAJz/DfX4zpWRMl+PGu0JcwnZw98=",
+            "email": "",
+            "date_joined": "2012-05-01T20:28:57Z"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "auth.user",
+        "fields": {
+            "username": "davide",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": true,
+            "last_login": "2012-05-01T20:28:57Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$10000$17UB4iRML68U$0oeZeeIb0xy8pFWjAJz/DfX4zpWRMl+PGu0JcwnZw98=",
+            "email": "",
+            "date_joined": "2012-05-01T20:28:57Z"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "account.account",
+        "fields": {
+            "timezone": "Europe/Rome",
+            "user": 2,
+            "language": "it"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "account.account",
+        "fields": {
+            "timezone": "Europe/Rome",
+            "user": 3,
+            "language": "it"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "account.emailaddress",
+        "fields": {
+            "verified": false,
+            "user": 2,
+            "primary": true,
+            "email": "massimiliano.ravelli@gmail.com"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "account.emailaddress",
+        "fields": {
+            "verified": false,
+            "user": 3,
+            "primary": true,
+            "email": "davidericco@alice.it"
+        }
+    }
+]
+

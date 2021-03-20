@@ -1,0 +1,114 @@
+[
+    {
+        "pk": 2,
+        "model": "events.event",
+        "fields": {
+            "description": "",
+            "title": "",
+            "time": "21:00:00",
+            "period": null,
+            "published": false,
+            "date": "2012-10-31",
+            "type": "rehearsal"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "events.event",
+        "fields": {
+            "description": "",
+            "title": "",
+            "time": "11:00:00",
+            "period": null,
+            "published": true,
+            "date": "2012-10-28",
+            "type": "performance"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "events.event",
+        "fields": {
+            "description": "",
+            "title": "",
+            "time": "21:00:00",
+            "period": null,
+            "published": true,
+            "date": "2012-10-24",
+            "type": "rehearsal"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "events.eventsong",
+        "fields": {
+            "song": 2,
+            "event": 2,
+            "usage": null,
+            "order": 1,
+            "guide": "",
+            "soloist": ""
+        }
+    },
+    {
+        "pk": 4,
+        "model": "events.eventsong",
+        "fields": {
+            "song": 1,
+            "event": 2,
+            "usage": null,
+            "order": 1,
+            "guide": "",
+            "soloist": ""
+        }
+    },
+    {
+        "pk": 5,
+        "model": "events.eventsong",
+        "fields": {
+            "song": 2,
+            "event": 1,
+            "usage": 1,
+            "order": 1,
+            "guide": "",
+            "soloist": ""
+        }
+    },
+    {
+        "pk": 6,
+        "model": "events.eventsong",
+        "fields": {
+            "song": 1,
+            "event": 1,
+            "usage": null,
+            "order": 1,
+            "guide": "",
+            "soloist": ""
+        }
+    },
+    {
+        "pk": 7,
+        "model": "events.eventsong",
+        "fields": {
+            "song": 2,
+            "event": 3,
+            "usage": null,
+            "order": 1,
+            "note": "Only first verse",
+            "guide": "Barney",
+            "soloist": "Fred"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "events.eventsong",
+        "fields": {
+            "song": 1,
+            "event": 3,
+            "usage": null,
+            "order": 2,
+            "guide": "",
+            "soloist": ""
+        }
+    }
+]

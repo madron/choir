@@ -1,0 +1,22 @@
+{% comment %}
+  The normal list, spiced up.
+
+  The id="comments" is required for JavaScript,
+  the 'comments/comment.html template is also used by the Ajax view.
+{% endcomment %}
+
+<div id="comments"{% if not comment_list %} class="empty"{% endif %}>
+    <hr />
+    <div class="tabular inline-related">
+    <fieldset class="module">
+    <table width=100%>
+    <col style="width:15em">
+    {% for comment in comment_list %}
+        <tr{% if preview %} id="comment-preview"{% else %} id="c{{ comment.id }}"{% endif %} class="{% cycle 'row1' 'row2' %} comment-item">
+        {% include "comments/comment.html" %}
+        <tr>
+    {% endfor %}
+    </table>
+    </fieldset>
+    </div>
+</div>

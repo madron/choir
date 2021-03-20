@@ -1,0 +1,9 @@
+$(document).ready(function(){
+    $('.recording-song-part-status-ok').parent().css("background-color","#00FF33");
+    $('.recording-song-part-status-no').parent().css("background-color","#00FF33");
+    $('.recording-song-part-status-review').parent().css("background-color","#00FFFF");
+    $('.recording-song-part-status').parent().css("background-color","#FFFF00");
+    $('.recording-song-part-status-fix').parent().css("background-color","#FFFF00");
+    $('.recording-song-part-status-partial').parent().css("background-color","#FFFF00");
+    $('.recording-song-part-status-improve').parent().css("background-color","#00CC00");
+});

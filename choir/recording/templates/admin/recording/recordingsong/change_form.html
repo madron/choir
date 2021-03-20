@@ -1,0 +1,36 @@
+{% extends "admin/change_form.html" %}
+{% load i18n %}
+{% load url from future %}
+{% load comments %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}fluent_comments/css/ajaxcomments.css" />
+{% endblock %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <script type="text/javascript" src="{{ STATIC_URL }}fluent_comments/js/ajaxcomments.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#id_comment").attr("cols", "120");
+            $("#id_comment").attr("rows", "20");
+        });
+    </script>
+{% endblock %}
+
+{% block object-tools-items %}
+    {% if perms.repertory.change_song %}
+        <li><a href="{{ original.song.get_admin_url }}" class="viewsitelink">{% trans "Admin" %}</a></li>
+    {% endif %}
+    <li><a href="history/" class="historylink">{% trans "History" %}</a></li>
+    <li><a href="{{ original.song.get_absolute_url }}" class="viewsitelink">{% trans "View on site" %}</a></li>
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    {% if original %}
+        {% render_comment_list for original %}
+        {% render_comment_form for original %}
+    {% endif %}
+{% endblock %}

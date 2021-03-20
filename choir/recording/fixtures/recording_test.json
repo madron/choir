@@ -1,0 +1,77 @@
+[
+{
+    "pk": 1,
+    "model": "recording.recordingsong",
+    "fields": {
+        "importance": null,
+        "completed": false,
+        "song": 7
+    }
+},
+{
+    "pk": 1,
+    "model": "recording.recordingsongpart",
+    "fields": {
+        "status": "",
+        "recording_song": 1,
+        "note": "",
+        "type": "soloist",
+        "order": 1
+    }
+},
+{
+    "pk": 2,
+    "model": "recording.recordingsongpart",
+    "fields": {
+        "status": "",
+        "recording_song": 1,
+        "note": "",
+        "type": "soprano",
+        "order": 10
+    }
+},
+{
+    "pk": 3,
+    "model": "recording.recordingsongpart",
+    "fields": {
+        "status": "no",
+        "recording_song": 1,
+        "note": "",
+        "type": "music",
+        "order": 0
+    }
+},
+{
+    "pk": 4,
+    "model": "recording.recordingsongpart",
+    "fields": {
+        "status": "",
+        "recording_song": 1,
+        "note": "",
+        "type": "tenore",
+        "order": 30
+    }
+},
+{
+    "pk": 5,
+    "model": "recording.recordingsongpart",
+    "fields": {
+        "status": "",
+        "recording_song": 1,
+        "note": "",
+        "type": "basso",
+        "order": 40
+    }
+},
+{
+    "pk": 6,
+    "model": "recording.recordingsongpart",
+    "fields": {
+        "status": "",
+        "recording_song": 1,
+        "note": "",
+        "type": "contralto",
+        "order": 20
+    }
+}
+]
