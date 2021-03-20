@@ -8,25 +8,38 @@ services:
     volumes:
       - db:/var/lib/postgresql/data
 
+  minio:
+    image: minio/minio
+    environment:
+      MINIO_ACCESS_KEY: admin
+      MINIO_SECRET_KEY: admin123
+    volumes:
+      - minio:/export
+    command: server /export
+
   django:
     build: .
     environment:
       - DEBUG=True
       - POSTGRES_HOST=db
+      - AWS_S3_ENDPOINT_URL=http://minio:9000
+      - AWS_S3_PUBLIC_URL=http://localhost:9000
+      - AWS_QUERYSTRING_AUTH=False
     depends_on:
       - db
     links:
       - db
+      - minio
 
   nginx:
     build: .
-    depends_on:
-      - django
     links:
-      - django:django
+      - django
     command: nginx
 
 
 volumes:
+  minio:
+    driver: local
   db:
     driver: local

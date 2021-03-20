@@ -13,3 +13,6 @@ DATABASES = {
 }
 
 STATIC_ROOT = '/static'
+
+# S3 Media
+DEFAULT_FILE_STORAGE = 's3storage.backends.S3Storage'
