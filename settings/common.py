@@ -31,7 +31,7 @@ LANGUAGE_CODE = os.getenv('LANGUAGE_CODE', 'en-us')
 # S3 Media
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID', 'admin')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY', 'admin123')
-AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL', 'http://localhost:9000')
+AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL', None)
 AWS_S3_PUBLIC_URL = os.getenv('AWS_S3_PUBLIC_URL', '')
 AWS_S3_SECURE_URLS = getenv_bool('AWS_S3_SECURE_URLS', default=True)
 AWS_S3_CUSTOM_DOMAIN = os.getenv('AWS_S3_CUSTOM_DOMAIN', None)
