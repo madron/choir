@@ -21,7 +21,6 @@ services:
   django:
     ports:
       - "8000:8000/tcp"
-    command: ["uwsgi", "--log-master", "--plugins", "/usr/lib/uwsgi/python3_plugin.so", "--master", "--processes", "1", "--threads", "8", "--chdir", "/src", "--wsgi", "settings.wsgi", "--http-socket", ":8000", "--stats", ":9191"]
 
   nginx:
     ports:
