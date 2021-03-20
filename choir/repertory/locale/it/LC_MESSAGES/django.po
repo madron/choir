@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-19 19:38+0100\n"
+"POT-Creation-Date: 2021-03-20 12:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,113 +19,113 @@ msgstr ""
 
 #: apps.py:7
 msgid "Repertory"
-msgstr ""
+msgstr "Repertorio"
 
-#: models.py:12
+#: models.py:11
 msgid "Score"
 msgstr "Partitura"
 
-#: models.py:13
+#: models.py:12
 msgid "Midi"
 msgstr "Midi"
 
-#: models.py:14
+#: models.py:13
 msgid "Choir"
 msgstr "Coro"
 
-#: models.py:15
+#: models.py:14
 msgid "Soprano"
 msgstr "Soprano"
 
-#: models.py:16
+#: models.py:15
 msgid "Contralto"
 msgstr "Contralto"
 
-#: models.py:17
+#: models.py:16
 msgid "Tenore"
 msgstr "Tenore"
 
-#: models.py:18
+#: models.py:17
 msgid "Basso"
 msgstr "Basso"
 
-#: models.py:26 models.py:38 models.py:50
+#: models.py:25 models.py:37 models.py:49
 msgid "name"
 msgstr "nome"
 
-#: models.py:29
+#: models.py:28
 msgid "period"
 msgstr "periodo"
 
-#: models.py:30 models.py:58
+#: models.py:29 models.py:57
 msgid "periods"
 msgstr "periodi"
 
-#: models.py:41
+#: models.py:40
 msgid "usage"
 msgstr "uso"
 
-#: models.py:42 models.py:59
+#: models.py:41 models.py:58
 msgid "usages"
 msgstr "usi"
 
-#: models.py:51
+#: models.py:50
 msgid "slug"
 msgstr "slug"
 
-#: models.py:52
+#: models.py:51
 msgid "number"
 msgstr "numero"
 
-#: models.py:53
+#: models.py:52
 msgid "page"
 msgstr "pagina"
 
-#: models.py:54
+#: models.py:53
 msgid "score number"
 msgstr "numero partitura"
 
-#: models.py:55
+#: models.py:54
 msgid "tempo"
 msgstr "tempo"
 
-#: models.py:56
+#: models.py:55
 msgid "composer"
 msgstr "autore"
 
-#: models.py:57
+#: models.py:56
 msgid "lyrics writer"
 msgstr "autore testo"
 
-#: models.py:60
+#: models.py:59
 msgid "date added"
 msgstr "data creazione"
 
-#: models.py:61
+#: models.py:60
 msgid "date changed"
 msgstr "data modifica"
 
-#: models.py:64
+#: models.py:63
 msgid "song"
 msgstr "canto"
 
-#: models.py:65
+#: models.py:64
 msgid "songs"
 msgstr "canti"
 
-#: models.py:89
+#: models.py:88
 msgid "file"
 msgstr "file"
 
-#: models.py:90
+#: models.py:89
 msgid "type"
 msgstr "tipo"
 
-#: models.py:93
+#: models.py:92
 msgid "song file"
 msgstr "file canto"
 
-#: models.py:94
+#: models.py:93
 msgid "song files"
 msgstr "file canto"
 

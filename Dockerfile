@@ -1,7 +1,7 @@
 FROM alpine:3.13
 
 # Packages
-RUN apk add --no-cache su-exec python3 nginx py3-pip uwsgi-python3 py3-psycopg2 tzdata
+RUN apk add --no-cache su-exec python3 nginx py3-pip uwsgi-python3 py3-psycopg2 tzdata gettext
 
 # Requirements
 COPY requirements /src/requirements
@@ -14,7 +14,8 @@ ENV DJANGO_SETTINGS_MODULE=settings.docker
 COPY . /src
 RUN    chmod 755 /src/manage.py \
     && chmod 755 /src/docker/entrypoint.sh \
-    && /src/manage.py collectstatic --link --noinput --verbosity=0
+    && /src/manage.py collectstatic --link --noinput --verbosity=0 \
+    && /src/manage.py compilemessages --verbosity=0
 
 WORKDIR /src/
 VOLUME ["/var/lib/nginx/tmp"]
