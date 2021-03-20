@@ -7,15 +7,18 @@ from django.dispatch import receiver
 from django.utils.text import Truncator
 from django.utils.translation import gettext as _
 
-SONG_FILE_TYPES = [
-    ('score', _('Score')),
-    ('midi', _('Midi')),
-    ('choir', _('Choir')),
-    ('soprano', _('Soprano')),
-    ('contralto', _('Contralto')),
-    ('tenore', _('Tenore')),
-    ('basso', _('Basso')),
-]
+SONG_FILE_TYPE = dict(
+    score=_('Score'),
+    midi=_('Midi'),
+    choir=_('Choir'),
+    chords=_('Chords'),
+    lyrics=_('Lyrics'),
+    soprano=_('Soprano'),
+    contralto=_('Contralto'),
+    tenore=_('Tenore'),
+    basso=_('Basso'),
+)
+SONG_FILE_TYPES = [(k, v) for (k, v) in SONG_FILE_TYPE.items()]
 EXTENSIONS = dict(
     midi='mid',
 )
@@ -74,13 +77,8 @@ def get_song_file_name(instance, filename):
     extension = extension.lower().strip('.')
     extension = EXTENSIONS.get(extension, extension)
     prefix = 'songfile/%s' % song.slug
-    if (instance.type == 'score' and extension == 'pdf') \
-            or (instance.type == 'midi' and extension == 'mid') \
-            or (instance.type == 'choir' and extension == 'mp3'):
-        # kyrie-eleison.midi
-        return '%s.%s' % (prefix, extension)
-    # kyrie-eleison-soprano.mp3
-    return '%s-%s.%s' % (prefix, instance.get_type_display().lower(), extension)
+    type =  SONG_FILE_TYPE[instance.type].lower()
+    return '%s-%s.%s' % (prefix, type, extension)
 
 
 class SongFile(models.Model):
