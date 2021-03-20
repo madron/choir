@@ -37,4 +37,4 @@ AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME', 'media')
 AWS_S3_FILE_OVERWRITE = getenv_bool('AWS_S3_FILE_OVERWRITE', default=True)
 AWS_QUERYSTRING_AUTH = getenv_bool('AWS_QUERYSTRING_AUTH', default=True)
 AWS_QUERYSTRING_EXPIRE = int(os.getenv('AWS_QUERYSTRING_EXPIRE', '3600'))
-# DEFAULT_FILE_STORAGE = 's3storage.backends.S3Storage'
+DEFAULT_FILE_STORAGE = os.getenv('DEFAULT_FILE_STORAGE', 'django.core.files.storage.FileSystemStorage')

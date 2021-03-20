@@ -13,4 +13,4 @@ MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
 INTERNAL_IPS = ['127.0.0.1']
 
 # S3 Media
-# DEFAULT_FILE_STORAGE = 's3storage.backends.S3Storage'
+# DEFAULT_FILE_STORAGE='s3storage.backends.S3Storage'
