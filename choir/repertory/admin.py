@@ -35,8 +35,7 @@ class SongAdmin(admin.ModelAdmin):
                 ('name', 'slug'),
                 ('number', 'page', 'score_number'),
                 ('tempo', 'composer', 'lyrics_writer'),
-                'periods',
-                'usages',
+                ('periods', 'usages'),
             ),
         )),
     )
