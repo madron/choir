@@ -121,7 +121,6 @@ class Song(models.Model):
             return str(self.score_number or '')
 
 
-
 def get_song_file_name(instance, filename):
     song = instance.song
     prefix, extension = splitext(filename)
@@ -153,7 +152,7 @@ class SongFile(models.Model):
         return extension.strip('.')
 
     def get_link(self, label=None):
-        title = '{} ({})'.format(self.song.name, self.type.capitalize())
+        title = '{} ({})'.format(self.song.name, SONG_FILE_TYPE[self.type])
         content = _('Format: {}'.format(self.get_extension()))
         extension = self.get_extension()
         label = label or FILE_LABEL.get(extension, extension)
