@@ -1,4 +1,5 @@
 import factory
+from django.core.files.uploadedfile import SimpleUploadedFile
 from .. import models
 
 
@@ -29,3 +30,4 @@ class SongFileFactory(factory.django.DjangoModelFactory):
         model = models.SongFile
 
     song = factory.SubFactory(SongFactory)
+    file = SimpleUploadedFile('file.pdf', '')

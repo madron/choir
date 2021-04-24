@@ -1,3 +1,4 @@
+from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import SimpleTestCase, TestCase
 from choir.repertory import models
 from . import factories
@@ -56,7 +57,35 @@ class GetSongFileNameTest(TestCase):
         self.assertEqual(filename, 'songfile/kyrie-eleison-basso.mid')
 
 
-class SongFileModelTest(SimpleTestCase):
+class SongFileModelTest(TestCase):
     def test_str(self):
         obj = models.SongFile(type='soprano')
         self.assertEqual(str(obj), 'soprano')
+
+    def test_get_link_basso(self):
+        obj = factories.SongFileFactory(
+            song__name='Kyrie Eleison',
+            song__slug='kyrie-eleison',
+            type='basso',
+            file=SimpleUploadedFile('abc.mp3', ''),
+        )
+        self.assertIn('<span class="mdi mdi-music"></span></a>', obj.get_link())
+
+    def test_get_link_score(self):
+        obj = factories.SongFileFactory(
+            song__name='Kyrie Eleison',
+            song__slug='kyrie-eleison',
+            type='score',
+            file=SimpleUploadedFile('abc.pdf', ''),
+        )
+        self.assertIn('<span class="mdi mdi-file-pdf"></span></a>', obj.get_link())
+
+    def test_get_link_score_with_number(self):
+        obj = factories.SongFileFactory(
+            song__name='Kyrie Eleison',
+            song__slug='kyrie-eleison',
+            song__score_number=12,
+            type='score',
+            file=SimpleUploadedFile('abc.pdf', ''),
+        )
+        self.assertIn('12</a>', obj.get_link())

@@ -156,6 +156,8 @@ class SongFile(models.Model):
         content = _('Format: {}'.format(self.get_extension()))
         extension = self.get_extension()
         label = label or FILE_LABEL.get(extension, extension)
+        if self.type == 'score' and self.song.score_number:
+            label = self.song.score_number
         return mark_safe('<a href="{}" title="{}" data-content="{}">{}</a>'.format(
             self.file.url, title, content, label))
     get_link.allow_tags = True
