@@ -15,4 +15,8 @@ DATABASES = {
 STATIC_ROOT = '/static'
 
 # S3 Media
-DEFAULT_FILE_STORAGE = 's3storage.backends.S3Storage'
+STORAGES = dict(
+    default=dict(
+        backend='storages.backends.s3.S3Storage',
+    ),
+)

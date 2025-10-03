@@ -10,7 +10,7 @@ class S3StorageTest(SimpleTestCase):
     def test_url_default(self):
         backend = backends.S3Storage()
         url = backend.url('file.txt')
-        self.assertTrue(url.startswith('http://localhost:9000/media/file.txt?AWSAccessKeyId=admin&Signature='))
+        self.assertTrue(url.startswith('http://localhost:9000/media/file.txt?'))
 
     @override_settings(
         AWS_S3_ENDPOINT_URL='http://localhost:9000',
@@ -29,7 +29,7 @@ class S3StorageTest(SimpleTestCase):
     def test_url_public(self):
         backend = backends.S3Storage()
         url = backend.url('file.txt')
-        self.assertTrue(url.startswith('https://media.example.com/media/file.txt?AWSAccessKeyId=admin&Signature='))
+        self.assertTrue(url.startswith('https://media.example.com/media/file.txt?'))
 
     @override_settings(
         AWS_S3_ENDPOINT_URL='http://localhost:9000',

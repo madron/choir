@@ -1,8 +1,8 @@
-from storages.backends.s3boto3 import S3Boto3Storage
+from storages.backends import s3
 from storages.utils import setting
 
 
-class S3Storage(S3Boto3Storage):
+class S3Storage(s3.S3Storage):
     def __init__(self, **settings):
         super().__init__(**settings)
         self.public_url = setting('AWS_S3_PUBLIC_URL')
