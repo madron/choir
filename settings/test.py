@@ -16,8 +16,4 @@ if not is_running_tests:
     INTERNAL_IPS = ['127.0.0.1']
 
 # S3 Media
-# STORAGES = dict(
-#     default=dict(
-#         backend='storages.backends.s3.S3Storage',
-#     ),
-# )
+# STORAGES['default'] = dict(BACKEND='storages.backends.s3.S3Storage')

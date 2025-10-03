@@ -31,6 +31,15 @@ INSTALLED_APPS = [
 
 LANGUAGE_CODE = os.getenv('LANGUAGE_CODE', 'en-us')
 
+STORAGES = dict(
+    default=dict(
+        BACKEND='storages.backends.s3.S3Storage',
+    ),
+    staticfiles=dict(
+        BACKEND='django.contrib.staticfiles.storage.StaticFilesStorage',
+    ),
+)
+
 # S3 Media
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID', 'admin')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY', 'admin123')
