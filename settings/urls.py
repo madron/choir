@@ -9,6 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('authentication.urls')),
     path('repertory/', include('choir.repertory.urls')),
+    path('player/', include(('choir.player.urls', 'player'), namespace='player')),
     path('', RedirectView.as_view(pattern_name='song_list'), name='home'),
 ]
 

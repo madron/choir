@@ -1,0 +1,20 @@
+{% extends "site_base.html" %}
+
+{% block scripts %}
+  <script src="https://unpkg.com/wavesurfer.js@7"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const ws = WaveSurfer.create({
+        container: '#waveform',
+        mediaControls: true,
+        url: 'https://corosantantonio.s3.amazonaws.com/songfile/{{ file_slug }}.mp3'
+    })
+      ws.on('ready', () => {/* ws.play() if you want autoplay */})
+    })
+  </script>
+{% endblock %}
+
+{% block content %}
+  <h3>{{ file_slug }}</h3>
+  <div id="waveform"></div>
+{% endblock %}
