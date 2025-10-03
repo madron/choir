@@ -1,5 +1,3 @@
-version: '2'
-
 services:
   minio:
     ports:
@@ -22,6 +20,6 @@ services:
     ports:
       - "8000:8000/tcp"
 
-  nginx:
+  caddy:
     ports:
-      - "80:80/tcp"
+      - "80:8100/tcp"

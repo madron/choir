@@ -10,6 +10,8 @@ readme = "README.md"
 python = "^3.13"
 Django = "^5.2.7"
 uwsgi = "^2.0.30"
+psycopg = "^3.2.10"
+psycopg-binary = "^3.2.10"
 django_storages = {extras = ["s3"], version = "^1.14.6"}
 # boto3 = "1.35.99"  # Stick with 1.35.99 if https://github.com/boto/boto3/issues/4401   https://github.com/boto/boto3/issues/4392
 django-bootstrap4 = '^25.2'

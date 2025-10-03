@@ -10,8 +10,8 @@ if [ "$1" = 'uwsgi' ]; then
     su-exec uwsgi python3 /src/manage.py create_default_admin
     echo su-exec nobody $*
     exec su-exec nobody $*
-elif [ "$1" = 'nginx' ]; then
-    exec nginx -c /src/docker/nginx.conf -g "daemon off;"
+elif [ "$1" = 'caddy' ]; then
+    su-exec nobody caddy run --config /src/docker/Caddyfile --watch
 else
     exec "$@"
 fi
