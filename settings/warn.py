@@ -1,7 +1,6 @@
 import warnings
 
 IGNORE_WARNINGS_MODULES = [
-    # 'debug_toolbar.middleware',       # https://github.com/jazzband/django-debug-toolbar/pull/1382
 ]
 IGNORE_WARNINGS_MESSAGES = [
 ]

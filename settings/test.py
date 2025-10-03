@@ -8,9 +8,12 @@ DATABASES = {
 }
 
 # Debug toolbar
-INSTALLED_APPS.append('debug_toolbar')
-MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
-INTERNAL_IPS = ['127.0.0.1']
+from debug_toolbar import settings as dt_settings
+is_running_tests = dt_settings.get_config()['IS_RUNNING_TESTS']
+if not is_running_tests:
+    INSTALLED_APPS.append('debug_toolbar')
+    MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
+    INTERNAL_IPS = ['127.0.0.1']
 
 # S3 Media
 # STORAGES = dict(
