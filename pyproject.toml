@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "choir"
+version = "1.0.0"
+package-mode = false
+description = ""
+authors = ['massimiliano.ravelli@gmail.com']
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+Django = "^5.2.7"
+uwsgi = "^2.0.30"
+django_storages = '^1.14.6'
+boto3 = "1.35.99"  # https://github.com/boto/boto3/issues/4401   https://github.com/boto/boto3/issues/4392
+django-bootstrap4 = '^25.2'
+
+[tool.poetry.group.test.dependencies]
+coverage = "^7.10.7"
+factory-boy = "^3.3.3"
+
+[tool.poetry.group.dev.dependencies]
+django-debug-toolbar = '^6.0.0'
+pudb = '^2025.1.1'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
