@@ -54,3 +54,5 @@ AWS_QUERYSTRING_EXPIRE = int(os.getenv('AWS_QUERYSTRING_EXPIRE', '3600'))
 AWS_S3_OBJECT_PARAMETERS = {
     "CacheControl": "public, max-age=604800, immutable",
 }
+
+PLAYER_AUDIO_FILE_PREFIX = os.getenv('PLAYER_AUDIO_FILE_PREFIX', 'https://corosantantonio.s3.amazonaws.com/songfile/')

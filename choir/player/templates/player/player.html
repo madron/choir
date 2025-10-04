@@ -7,7 +7,7 @@
       const ws = WaveSurfer.create({
         container: '#waveform',
         mediaControls: true,
-        url: 'https://corosantantonio.s3.amazonaws.com/songfile/{{ file_slug }}.mp3'
+        url: '{{ audio_file_prefix }}{{ file_slug }}.mp3'
     })
       ws.on('ready', () => {/* ws.play() if you want autoplay */})
     })
