@@ -23,10 +23,24 @@ class Event(models.Model):
     class Meta:
         verbose_name = _('event')
         verbose_name_plural = _('events')
-        ordering = ('date',)
+        ordering = ('-date',)
 
     def __str__(self):
         return self.slug
+
+    def save(self, *args, **kwargs):
+        if self.date:
+            slug = self.date.strftime('%Y-%m-%d')
+            if not self.slug.startswith(slug):
+                self.slug = slug
+                events = Event.objects.filter(date__date=self.date.date())
+                if self.pk:
+                    events = events.exclude(pk=self.pk)
+                if events.exists():
+                    self.slug += '-' + str(events.count() + 1)
+        else:
+            self.slug = str(self.id)
+        super().save(*args, **kwargs)
 
 
 class EventSong(models.Model):

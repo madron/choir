@@ -15,9 +15,9 @@ class EventAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, dict(
             fields=(
-                ('date', 'slug'),
-                ('type', 'name'),
-                ('location', 'notes'),
+                ('type', 'date',),
+                ('name', 'location',),
+                ('notes',),
             ),
         )),
     )
