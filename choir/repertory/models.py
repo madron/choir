@@ -33,30 +33,6 @@ FILE_LABEL = dict(
 )
 
 
-class Period(models.Model):
-    name = models.CharField(_('name'), max_length=200, unique=True, db_index=True)
-
-    class Meta:
-        verbose_name = _('period')
-        verbose_name_plural = _('periods')
-        ordering = ('name',)
-
-    def __str__(self):
-        return self.name
-
-
-class Usage(models.Model):
-    name = models.CharField(_('name'), max_length=200, unique=True, db_index=True)
-
-    class Meta:
-        verbose_name = _('usage')
-        verbose_name_plural = _('usages')
-        ordering = ('name',)
-
-    def __str__(self):
-        return self.name
-
-
 class Song(models.Model):
     name = models.CharField(_('name'), max_length=200, unique=True, db_index=True)
     slug = models.SlugField(_('slug'), max_length=200, unique=True, db_index=True)
@@ -66,8 +42,6 @@ class Song(models.Model):
     tempo = models.PositiveIntegerField(_('tempo'), null=True, blank=True)
     composer = models.CharField(_('composer'), max_length=200, blank=True)
     lyrics_writer = models.CharField(_('lyrics writer'), max_length=200, blank=True)
-    periods = models.ManyToManyField(Period, blank=True, verbose_name=_('periods'))
-    usages = models.ManyToManyField(Usage, blank=True, verbose_name=_('usages'))
     date_added = models.DateField(_('date added'), auto_now_add=True, null=True, db_index=True)
     date_changed = models.DateField(_('date changed'), auto_now=True, null=True, db_index=True)
 

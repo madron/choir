@@ -1,43 +1,13 @@
 [
     {
         "pk": 1,
-        "model": "repertory.period",
-        "fields": {
-            "name": "Standard"
-        }
-    },
-    {
-        "pk": 2,
-        "model": "repertory.period",
-        "fields": {
-            "name": "Lent"
-        }
-    },
-    {
-        "pk": 1,
-        "model": "repertory.usage",
-        "fields": {
-            "name": "Start"
-        }
-    },
-    {
-        "pk": 2,
-        "model": "repertory.usage",
-        "fields": {
-            "name": "End"
-        }
-    },
-    {
-        "pk": 1,
         "model": "repertory.song",
         "fields": {
             "name": "Kyrie eleison",
             "slug": "kyrie-eleison",
             "number": "96",
             "page": 35,
-            "score_number": 21,
-            "periods": [2],
-            "usages": [1, 2]
+            "score_number": 21
         }
     },
     {
@@ -53,9 +23,7 @@
         "model": "repertory.song",
         "fields": {
             "name": "Magnificat",
-            "slug": "magnificat",
-            "periods": [1, 2],
-            "usages": [2]
+            "slug": "magnificat"
         }
     },
     {

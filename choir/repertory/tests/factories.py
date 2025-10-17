@@ -3,20 +3,6 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from .. import models
 
 
-class PeriodFactory(factory.django.DjangoModelFactory):
-    class Meta:
-        model = models.Period
-
-    name = factory.Sequence(lambda n: 'period%s' % n)
-
-
-class UsageFactory(factory.django.DjangoModelFactory):
-    class Meta:
-        model = models.Usage
-
-    name = factory.Sequence(lambda n: 'usage%s' % n)
-
-
 class SongFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = models.Song

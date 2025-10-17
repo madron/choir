@@ -61,22 +61,6 @@ msgstr "Basso"
 msgid "name"
 msgstr "nome"
 
-#: models.py:40
-msgid "period"
-msgstr "periodo"
-
-#: models.py:41 models.py:69
-msgid "periods"
-msgstr "periodi"
-
-#: models.py:52
-msgid "usage"
-msgstr "uso"
-
-#: models.py:53 models.py:70
-msgid "usages"
-msgstr "usi"
-
 #: models.py:62
 msgid "slug"
 msgstr "slug"
