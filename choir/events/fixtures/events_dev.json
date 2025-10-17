@@ -17,7 +17,7 @@
     "fields": {
         "event": 1,
         "song": 5,
-        "usage": "",
+        "section": "",
         "soloist": "",
         "order": 10
     }
@@ -28,7 +28,7 @@
     "fields": {
         "event": 1,
         "song": 2,
-        "usage": "",
+        "section": "",
         "soloist": "",
         "order": 20
     }
@@ -39,7 +39,7 @@
     "fields": {
         "event": 1,
         "song": 1,
-        "usage": "",
+        "section": "",
         "soloist": "",
         "order": 30
     }

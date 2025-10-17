@@ -66,8 +66,8 @@ msgid "events"
 msgstr "eventi"
 
 #: models.py:35
-msgid "usage"
-msgstr "uso"
+msgid "section"
+msgstr "sezione"
 
 #: models.py:36
 msgid "soloist"
