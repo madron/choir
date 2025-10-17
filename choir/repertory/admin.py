@@ -15,6 +15,7 @@ class SongAdmin(admin.ModelAdmin):
         'name', 'number', 'page', 'score_number',
         'tempo', 'composer', 'lyrics_writer', 'date_added')
     prepopulated_fields = dict(slug=('name',))
+    search_fields = ['name']
     form = forms.SongForm
     fieldsets = (
         (None, dict(

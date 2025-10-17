@@ -4,6 +4,7 @@ from . import models
 
 class EventSongInline(admin.TabularInline):
     model = models.EventSong
+    autocomplete_fields = ['song']
     extra = 1
 
 
@@ -11,7 +12,6 @@ class EventSongInline(admin.TabularInline):
 class EventAdmin(admin.ModelAdmin):
     model = models.Event
     list_display = ('date', 'slug', 'type', 'name', 'location')
-    prepopulated_fields = dict(slug=('name',))
     fieldsets = (
         (None, dict(
             fields=(
