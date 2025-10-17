@@ -1,5 +1,6 @@
 from django.contrib import admin
 from . import models
+from . import forms
 
 
 class EventSongInline(admin.TabularInline):
@@ -12,6 +13,7 @@ class EventSongInline(admin.TabularInline):
 class EventAdmin(admin.ModelAdmin):
     model = models.Event
     list_display = ('date', 'slug', 'type', 'name', 'location')
+    form = forms.EventForm
     fieldsets = (
         (None, dict(
             fields=(
