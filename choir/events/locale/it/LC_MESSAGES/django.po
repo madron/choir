@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: choir.events\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-17 15:41+0200\n"
+"POT-Creation-Date: 2025-10-17 18:33+0200\n"
 "PO-Revision-Date: 2025-10-17 00:00+0000\n"
 "Last-Translator: Augment Agent <noreply@example.com>\n"
 "Language-Team: Italian\n"
@@ -16,6 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin.py:35
+msgid "Songs"
+msgstr "Canti"
 
 #: apps.py:7
 msgid "Events"
@@ -65,22 +69,22 @@ msgstr "evento"
 msgid "events"
 msgstr "eventi"
 
-#: models.py:35
+#: models.py:49
 msgid "section"
 msgstr "sezione"
 
-#: models.py:36
+#: models.py:50
 msgid "soloist"
 msgstr "solista"
 
-#: models.py:37
+#: models.py:51
 msgid "order"
 msgstr "ordine"
 
-#: models.py:40
+#: models.py:54
 msgid "event song"
 msgstr "canto evento"
 
-#: models.py:41
+#: models.py:55
 msgid "event songs"
 msgstr "canti evento"
