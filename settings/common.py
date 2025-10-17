@@ -18,6 +18,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'authentication',
     'choir.repertory',
+    'choir.events',
     'choir.player',
     'choir.web',
     'bootstrap4',
@@ -56,3 +57,4 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 
 PLAYER_AUDIO_FILE_PREFIX = os.getenv('PLAYER_AUDIO_FILE_PREFIX', 'https://corosantantonio.s3.amazonaws.com/songfile/')
+DEFAULT_EVENT_LOCATION = os.getenv('DEFAULT_EVENT_LOCATION', '')
