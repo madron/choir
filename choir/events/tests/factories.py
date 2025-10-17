@@ -8,6 +8,7 @@ class EventFactory(factory.django.DjangoModelFactory):
         model = models.Event
 
     name = factory.Sequence(lambda n: 'event%s' % n)
+    slug = factory.Sequence(lambda n: 'slug-%s' % n)
 
 
 class EventSongFactory(factory.django.DjangoModelFactory):
