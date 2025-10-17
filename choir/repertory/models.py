@@ -1,23 +1,12 @@
-from datetime import date
 from os.path import splitext
 from django.db import models
 from django.db.models.signals import pre_delete
 from django.dispatch import receiver
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext as _
+from .constants import SONG_FILE_TYPE
 
 
-SONG_FILE_TYPE = dict(
-    score=_('Score'),
-    midi=_('Midi'),
-    choir=_('Choir'),
-    chords=_('Chords'),
-    lyrics=_('Lyrics'),
-    soprano=_('Soprano'),
-    contralto=_('Contralto'),
-    tenore=_('Tenore'),
-    basso=_('Basso'),
-)
 SONG_FILE_TYPES = [(k, v) for (k, v) in SONG_FILE_TYPE.items()]
 PUBLIC_SONG_FILE_TYPES = ['chords']
 PUBLIC_SONG_FILE_TYPES = [(x, SONG_FILE_TYPE[x]) for x in PUBLIC_SONG_FILE_TYPES]

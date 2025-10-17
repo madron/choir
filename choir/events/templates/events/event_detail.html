@@ -1,0 +1,35 @@
+{% extends "site_base.html" %}
+{% load i18n %}
+
+
+{% block content %}
+
+{% if perms.events %}
+    <a href="{% url 'admin:events_event_change' event.slug %}"><i class="bi bi-pen"></i>{% translate "Edit" %}</a>
+{% endif %}
+
+
+<h1>{{ title }} - {{ event.date|date:"l d F G:i" }}</h1>
+<h3>{{ event.location }}</h3>
+<p>{{ event.notes }}</p>
+
+<h2>{% translate "Songs" %}</h2>
+<ul>
+{% for eventsong in event.eventsong_set.all %}
+<li>{{ eventsong.song.name }}</li>
+{% endfor %}
+</ul>
+
+{% for section, section_name in choir_section.items %}
+<h2>{{ section_name }}</h2>
+<div>{{ title }}</div>
+<div>{{ event.date|date:"l d F G:i" }}</div>
+<div>{{ event.location }}</div>
+<ul>
+    {% for eventsong in event.eventsong_set.all %}
+    <li>{{ eventsong.song.name }}</li>
+    {% endfor %}
+</ul>
+{% endfor %}
+
+{% endblock %}

@@ -27,7 +27,7 @@ msgstr "Eventi"
 
 #: models.py:7
 msgid "Rehearsal"
-msgstr "Prova"
+msgstr "Prove"
 
 #: models.py:8
 msgid "Live"

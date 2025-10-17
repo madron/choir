@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     'choir.events',
     'choir.player',
     'choir.web',
-    'bootstrap4',
+    'django_bootstrap5',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,5 +56,6 @@ AWS_S3_OBJECT_PARAMETERS = {
     "CacheControl": "public, max-age=604800, immutable",
 }
 
+BASE_URL = os.getenv('BASE_URL', 'http://localhost:8000')
 PLAYER_AUDIO_FILE_PREFIX = os.getenv('PLAYER_AUDIO_FILE_PREFIX', 'https://corosantantonio.s3.amazonaws.com/songfile/')
 DEFAULT_EVENT_LOCATION = os.getenv('DEFAULT_EVENT_LOCATION', '')

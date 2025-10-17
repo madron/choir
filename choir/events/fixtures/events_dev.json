@@ -3,7 +3,7 @@
     "model": "events.event",
     "pk": 1,
     "fields": {
-        "date": "2025-10-15T13:11:28Z",
+        "date": "2025-10-15T21:00:28Z",
         "slug": "2025-10-15",
         "type": "rehearsal",
         "name": "",
