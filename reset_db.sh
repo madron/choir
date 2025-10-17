@@ -5,4 +5,5 @@ rm -f db.sqlite3
 
 ./manage.py loaddata \
     auth_admin \
-    repertory_test
+    repertory_test \
+    events_dev

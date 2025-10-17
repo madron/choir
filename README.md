@@ -9,6 +9,13 @@ coverage html
 ### Docker
 docker-compose build && docker-compose -f docker-compose.test.yml run --rm sut
 
+## Translation
+```
+cd choir/player && django-admin makemessages --all && cd ../..
+cd choir/events && django-admin makemessages --all && cd ../..
+cd choir/repertory && django-admin makemessages --all && cd ../..
+```
+
 ## Tag version to trigger github build
 ```
 export TAG=v1.1.xxx
