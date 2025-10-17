@@ -1,0 +1,47 @@
+[
+{
+    "model": "events.event",
+    "pk": 1,
+    "fields": {
+        "date": "2025-10-15T13:11:28Z",
+        "slug": "2025-10-15",
+        "type": "rehearsal",
+        "name": "",
+        "location": "",
+        "notes": ""
+    }
+},
+{
+    "model": "events.eventsong",
+    "pk": 1,
+    "fields": {
+        "event": 1,
+        "song": 5,
+        "usage": "",
+        "soloist": "",
+        "order": 10
+    }
+},
+{
+    "model": "events.eventsong",
+    "pk": 2,
+    "fields": {
+        "event": 1,
+        "song": 2,
+        "usage": "",
+        "soloist": "",
+        "order": 20
+    }
+},
+{
+    "model": "events.eventsong",
+    "pk": 3,
+    "fields": {
+        "event": 1,
+        "song": 1,
+        "usage": "",
+        "soloist": "",
+        "order": 30
+    }
+}
+]

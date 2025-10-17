@@ -14,7 +14,7 @@ DEFAULT_EVENT_TYPE = 'rehearsal'
 
 class Event(models.Model):
     date = models.DateTimeField(_('date'), null=True, blank=True, db_index=True)
-    slug = models.SlugField(_('slug'), max_length=200, primary_key=True, db_index=True)
+    slug = models.SlugField(_('slug'), max_length=200, unique=True, db_index=True)
     type = models.CharField(_('type'), max_length=20, choices=EVENT_TYPES, default=DEFAULT_EVENT_TYPE)
     name = models.CharField(_('name'), max_length=200, blank=True)
     location = models.CharField(_('location'), max_length=200, blank=True, default=settings.DEFAULT_EVENT_LOCATION)
