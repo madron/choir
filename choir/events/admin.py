@@ -16,6 +16,8 @@ class EventAdmin(admin.ModelAdmin):
     model = models.Event
     form = EventForm
     list_display = ('date', 'slug', 'type', 'name', 'location')
+    list_filter = ['type']
+    date_hierarchy = 'date'
     form = forms.EventForm
     fieldsets = (
         (None, dict(
