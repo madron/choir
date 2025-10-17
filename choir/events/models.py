@@ -45,7 +45,7 @@ class Event(models.Model):
 
 class EventSong(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE, db_index=True)
-    song = models.ForeignKey('repertory.Song', on_delete=models.SET_NULL, null=True)
+    song = models.ForeignKey('repertory.Song', on_delete=models.SET_NULL, blank=True,null=True)
     section = models.CharField(_('section'), max_length=200, blank=True)
     soloist = models.CharField(_('soloist'), max_length=200, blank=True)
     order = models.PositiveIntegerField(_('order'), null=True, blank=True, db_index=True)
