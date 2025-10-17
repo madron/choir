@@ -19,6 +19,7 @@ class EventAdmin(admin.ModelAdmin):
     list_filter = ['type']
     date_hierarchy = 'date'
     form = forms.EventForm
+    save_as = True
     fieldsets = (
         (None, dict(
             fields=(
