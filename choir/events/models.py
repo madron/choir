@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.urls import reverse
 from django.utils.translation import gettext as _
 
 
@@ -41,6 +42,15 @@ class Event(models.Model):
         else:
             self.slug = str(self.id)
         super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('events:event_detail', kwargs={'slug': self.slug})
+
+    def get_title(self):
+        if self.type == 'rehearsal':
+            return self.get_type_display()
+        else:
+            return self.name
 
 
 class EventSong(models.Model):

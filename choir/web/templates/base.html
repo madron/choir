@@ -1,4 +1,6 @@
+
 {% load static %}
+{% load i18n %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,6 +24,12 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="">Coro di S.Antonio</a>
+            {% block navbar_apps %}
+            <div class="navbar-nav">
+                <a class="nav-link" href="{% url 'repertory:song_list' %}">{% translate "Repertory" %}</a>
+                <a class="nav-link" href="{% url 'events:event_list' %}">{% translate "Events" %}</a>
+            </div>
+            {% endblock %}
             {% block navbar_auth %}
             <div class="navbar-nav">
                 {% if user.is_authenticated %}

@@ -1,13 +1,12 @@
-{% extends "site_base.html" %}
+{% extends "events/base.html" %}
 {% load i18n %}
 
 
 {% block content %}
 
 {% if perms.events %}
-    <a href="{% url 'admin:events_event_change' event.slug %}"><i class="bi bi-pen"></i>{% translate "Edit" %}</a>
+    <a href="{% url 'admin:events_event_change' event.pk %}"><i class="bi bi-pen"></i>{% translate "Edit" %}</a>
 {% endif %}
-
 
 <h1>{{ title }} - {{ event.date|date:"l d F G:i" }}</h1>
 <h3>{{ event.location }}</h3>
@@ -27,7 +26,17 @@
 <div>{{ event.location }}</div>
 <ul>
     {% for eventsong in event.eventsong_set.all %}
-    <li>{{ eventsong.song.name }}</li>
+    <li>
+        <div>{{ eventsong.song.name }}</div>
+        {% for file in eventsong.song.songfile_set.all %}
+            {% if file.type == 'score' %}
+            <div>{{ file.file.url }}</div>
+            {% endif %}
+            {% if file.type == section %}
+            <div>{{ file.file.url }}</div>
+            {% endif %}
+        {% endfor %}
+    </li>
     {% endfor %}
 </ul>
 {% endfor %}

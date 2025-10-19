@@ -1,4 +1,5 @@
-from django.views.generic import DetailView
+from django.utils import timezone
+from django.views.generic import DetailView, ListView
 from choir.events import models
 from .constants import CHOIR_SECTION
 
@@ -18,3 +19,11 @@ class EventDetailView(DetailView):
         else:
             context['title'] = event.name
         return context
+
+
+class EventListView(ListView):
+    model = models.Event
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        return qs.filter(date__gte=timezone.now().date()).order_by('date')

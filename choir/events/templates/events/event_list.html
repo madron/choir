@@ -1,0 +1,22 @@
+{% extends "events/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1>{% translate "Next events" %}</h1>
+
+<table class="table table-hover">
+    <tbody>
+        {% for event in event_list %}
+        <tr>
+            <td>{% if user.is_authenticated %}<a href="{% url 'events:event_detail' event.slug %}">{{ event.get_title }}</a>{% else %}{{ event.get_title }}{% endif %}</td>
+            <td>{{ event.date|date:"l d F G:i" }}</td>
+            <td>{{ event.location }}</td>
+            {% if perms.events %}
+                <td><a href="{% url 'admin:events_event_change' event.pk %}"><i class="bi bi-pen"></i>{% translate "Edit" %}</a></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

@@ -1,12 +1,13 @@
-{% extends "site_base.html" %}
+{% extends "repertory/base.html" %}
+{% load i18n %}
 
 {% block content %}
 <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col" title="Nome" class="centered">Nome</th>
-        <th scope="col" title="Numero" class="centered">N.</th>
-        <th scope="col" title="Pagina" class="centered">Pag.</th>
+        <th scope="col" title="{% translate "Nome" %}" class="centered">{% translate "Name" %}</th>
+        <th scope="col" title="{% translate "N." %}" class="centered">{% translate "N." %}</th>
+        <th scope="col" title="{% translate "Page" %}" class="centered">{% translate "Pag." %}</th>
         {% for type in public_file_types %}
             <th scope="col" class="centered">{{ type.1 }}</th>
         {% endfor %}

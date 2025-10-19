@@ -1,4 +1,5 @@
 from os.path import splitext
+from django.conf import settings
 from django.db import models
 from django.db.models.signals import pre_delete
 from django.dispatch import receiver
@@ -56,6 +57,12 @@ class Song(models.Model):
             return obj.get_link(label=label)
             pass
         return ''
+
+    def get_files(self, type_choices):
+        files = dict()
+        for file in self.songfile_set.all():
+            files[file.type] = file
+        return [files.get(x[0], None) for x in type_choices]
 
     def get_files(self, type_choices):
         files = dict()
