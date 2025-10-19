@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: choir.events\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-17 18:33+0200\n"
+"POT-Creation-Date: 2025-10-19 17:02+0200\n"
 "PO-Revision-Date: 2025-10-17 00:00+0000\n"
 "Last-Translator: Augment Agent <noreply@example.com>\n"
 "Language-Team: Italian\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: admin.py:35
+#: admin.py:35 templates/events/event_detail.html:15
 msgid "Songs"
 msgstr "Canti"
 
@@ -25,66 +25,74 @@ msgstr "Canti"
 msgid "Events"
 msgstr "Eventi"
 
-#: models.py:7
+#: models.py:8
 msgid "Rehearsal"
 msgstr "Prove"
 
-#: models.py:8
+#: models.py:9
 msgid "Live"
 msgstr "Live"
 
-#: models.py:9
+#: models.py:10
 msgid "Other"
 msgstr "Altro"
 
-#: models.py:16
+#: models.py:17
 msgid "date"
 msgstr "data"
 
-#: models.py:17
+#: models.py:18
 msgid "slug"
 msgstr "slug"
 
-#: models.py:18
+#: models.py:19
 msgid "type"
 msgstr "tipo"
 
-#: models.py:19
+#: models.py:20
 msgid "name"
 msgstr "nome"
 
-#: models.py:20
+#: models.py:21
 msgid "location"
 msgstr "luogo"
 
-#: models.py:21
+#: models.py:22
 msgid "notes"
 msgstr "note"
 
-#: models.py:24
+#: models.py:25
 msgid "event"
 msgstr "evento"
 
-#: models.py:25
+#: models.py:26
 msgid "events"
 msgstr "eventi"
 
-#: models.py:49
+#: models.py:59
 msgid "section"
 msgstr "sezione"
 
-#: models.py:50
+#: models.py:60
 msgid "soloist"
 msgstr "solista"
 
-#: models.py:51
+#: models.py:61
 msgid "order"
 msgstr "ordine"
 
-#: models.py:54
+#: models.py:64
 msgid "event song"
 msgstr "canto evento"
 
-#: models.py:55
+#: models.py:65
 msgid "event songs"
 msgstr "canti evento"
+
+#: templates/events/event_detail.html:8 templates/events/event_list.html:15
+msgid "Edit"
+msgstr "Modifica"
+
+#: templates/events/event_list.html:5
+msgid "Next events"
+msgstr "Prossimi eventi"

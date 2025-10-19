@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: choir.repertory\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-17 15:39+0200\n"
+"POT-Creation-Date: 2025-10-19 17:03+0200\n"
 "PO-Revision-Date: 2025-10-17 00:00+0000\n"
 "Last-Translator: Augment Agent <noreply@example.com>\n"
 "Language-Team: Italian\n"
@@ -17,111 +17,126 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-
 #: apps.py:7
 msgid "Repertory"
 msgstr "Repertorio"
 
-#: models.py:11
+#: constants.py:5
 msgid "Score"
 msgstr "Partitura"
 
-#: models.py:12
+#: constants.py:6
 msgid "Midi"
 msgstr "Midi"
 
-#: models.py:13
+#: constants.py:7
 msgid "Choir"
 msgstr "Coro"
 
-#: models.py:14
+#: constants.py:8
 msgid "Chords"
 msgstr "Accordi"
 
-#: models.py:15
+#: constants.py:9
 msgid "Lyrics"
 msgstr "Testo"
 
-#: models.py:16
+#: constants.py:10
 msgid "Soprano"
 msgstr "Soprano"
 
-#: models.py:17
+#: constants.py:11
 msgid "Contralto"
 msgstr "Contralto"
 
-#: models.py:18
+#: constants.py:12
 msgid "Tenore"
 msgstr "Tenore"
 
-#: models.py:19
+#: constants.py:13
 msgid "Basso"
 msgstr "Basso"
 
-#: models.py:37
+#: models.py:27
 msgid "name"
 msgstr "nome"
 
-#: models.py:38
+#: models.py:28
 msgid "slug"
 msgstr "slug"
 
-#: models.py:39
+#: models.py:29
 msgid "number"
 msgstr "numero"
 
-#: models.py:40
+#: models.py:30
 msgid "page"
 msgstr "pagina"
 
-#: models.py:41
+#: models.py:31
 msgid "score number"
 msgstr "numero partitura"
 
-#: models.py:42
+#: models.py:32
 msgid "tempo"
 msgstr "tempo"
 
-#: models.py:43
+#: models.py:33
 msgid "composer"
 msgstr "autore"
 
-#: models.py:44
+#: models.py:34
 msgid "lyrics writer"
 msgstr "autore testo"
 
-#: models.py:45
+#: models.py:35
 msgid "date added"
 msgstr "data creazione"
 
-#: models.py:46
+#: models.py:36
 msgid "date changed"
 msgstr "data modifica"
 
-#: models.py:49
+#: models.py:39
 msgid "song"
 msgstr "canto"
 
-#: models.py:50
+#: models.py:40
 msgid "songs"
 msgstr "canti"
 
-#: models.py:110
+#: models.py:106
 msgid "file"
 msgstr "file"
 
-#: models.py:111
+#: models.py:107
 msgid "type"
 msgstr "tipo"
 
-#: models.py:114
+#: models.py:110
 msgid "song file"
 msgstr "file canto"
 
-#: models.py:115
+#: models.py:111
 msgid "song files"
 msgstr "file canto"
 
-#: models.py:130
+#: models.py:126
 msgid "Format: {}"
 msgstr "Formato: {}"
+
+#: templates/repertory/song_list.html:8
+msgid "Name"
+msgstr "Nome"
+
+#: templates/repertory/song_list.html:9
+msgid "N."
+msgstr "N."
+
+#: templates/repertory/song_list.html:10
+msgid "Page"
+msgstr "Pagina"
+
+#: templates/repertory/song_list.html:10
+msgid "Pag."
+msgstr "Pag."
