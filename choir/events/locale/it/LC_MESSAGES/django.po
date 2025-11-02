@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: choir.events\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-19 17:02+0200\n"
+"POT-Creation-Date: 2025-11-02 14:55+0100\n"
 "PO-Revision-Date: 2025-10-17 00:00+0000\n"
 "Last-Translator: Augment Agent <noreply@example.com>\n"
 "Language-Team: Italian\n"
@@ -92,6 +92,30 @@ msgstr "canti evento"
 #: templates/events/event_detail.html:8 templates/events/event_list.html:15
 msgid "Edit"
 msgstr "Modifica"
+
+#: templates/events/event_detail.html:19
+msgid "Section"
+msgstr "Sezione"
+
+#: templates/events/event_detail.html:20
+msgid "Number"
+msgstr "Numero"
+
+#: templates/events/event_detail.html:21
+msgid "Page"
+msgstr "Pagina"
+
+#: templates/events/event_detail.html:22
+msgid "Name"
+msgstr "Nome"
+
+#: templates/events/event_detail.html:23
+msgid "Score Number"
+msgstr "Partitura"
+
+#: templates/events/event_detail.html:24
+msgid "Soloist"
+msgstr "Solista"
 
 #: templates/events/event_list.html:5
 msgid "Next events"

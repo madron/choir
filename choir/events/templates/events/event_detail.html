@@ -13,11 +13,32 @@
 <p>{{ event.notes }}</p>
 
 <h2>{% translate "Songs" %}</h2>
-<ul>
-{% for eventsong in event.eventsong_set.all %}
-<li>{{ eventsong.song.name }}</li>
-{% endfor %}
-</ul>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col" class="centered">{% translate "Section" %}</th>
+            <th scope="col" class="centered">{% translate "Number" %}</th>
+            <th scope="col" class="centered">{% translate "Page" %}</th>
+            <th scope="col" class="centered">{% translate "Name" %}</th>
+            <th scope="col" class="centered">{% translate "Score Number" %}</th>
+            <th scope="col" class="centered">{% translate "Soloist" %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for eventsong in event.eventsong_set.all %}
+
+        <tr>
+            <td>{{ eventsong.section }}</td>
+            <td>{{ eventsong.song.number | default:"" }}</td>
+            <td>{{ eventsong.song.page | default:"" }}</td>
+            <td>{{ eventsong.song.name }}</td>
+            <td>{{ eventsong.song.number | default:"" }}</td>
+            <td>{{ eventsong.soloist }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 
 {% for section, section_name in choir_section.items %}
 <h2>{{ section_name }}</h2>
@@ -30,10 +51,10 @@
         <div>{{ eventsong.song.name }}</div>
         {% for file in eventsong.song.songfile_set.all %}
             {% if file.type == 'score' %}
-            <div>{{ file.file.url }}</div>
+            <div><a href="{{ file.file.url }}">{{ file.file.url }}</a></div>
             {% endif %}
             {% if file.type == section %}
-            <div>{{ file.file.url }}</div>
+            <div><a href="{{ file.file.url }}">{{ file.file.url }}</a></div>
             {% endif %}
         {% endfor %}
     </li>
