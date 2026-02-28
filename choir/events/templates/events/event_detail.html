@@ -1,5 +1,6 @@
 {% extends "events/base.html" %}
 {% load i18n %}
+{% load events_tags %}
 
 
 {% block content %}
@@ -41,23 +42,31 @@
 
 
 {% for section, section_name in choir_section.items %}
-<h2>{{ section_name }}</h2>
+<h2 id="{{ section }}">{{ section_name }}</h2>
+<div><a href="{{ base_url }}{% url 'events:event_detail' event.slug %}#{{ section }}">{{ base_url }}{% url 'events:event_detail' event.slug %}#{{ section }}</a></div>
 <div>{{ title }}</div>
 <div>{{ event.date|date:"l d F G:i" }}</div>
 <div>{{ event.location }}</div>
 <ul>
     {% for eventsong in event.eventsong_set.all %}
-    <li>
-        <div>{{ eventsong.song.name }}</div>
-        {% for file in eventsong.song.songfile_set.all %}
-            {% if file.type == 'score' %}
-            <div><a href="{{ file.file.url }}">{{ file.file.url }}</a></div>
-            {% endif %}
-            {% if file.type == section %}
-            <div><a href="{{ file.file.url }}">{{ file.file.url }}</a></div>
-            {% endif %}
-        {% endfor %}
-    </li>
+        {% get_eventsong_section_songfile eventsong section as songfile %}
+        <li>
+            <div>
+                {% if songfile %}
+                    <a href="{% url 'player:index' songfile.get_slug %}">{{ eventsong.song.name }}</a>
+                {% else %}
+                    {{ eventsong.song.name }}
+                {% endif %}
+            </div>
+            {% for file in eventsong.song.songfile_set.all %}
+                {% if file.type == 'score' %}
+                <div><a href="{{ file.file.url }}">{{ file.file.url }}</a></div>
+                {% endif %}
+                {% if file.type == section %}
+                <div><a href="{{ file.file.url }}">{{ file.file.url }}</a></div>
+                {% endif %}
+            {% endfor %}
+        </li>
     {% endfor %}
 </ul>
 {% endfor %}

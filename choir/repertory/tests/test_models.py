@@ -1,13 +1,30 @@
 from django.core.files.uploadedfile import SimpleUploadedFile
-from django.test import SimpleTestCase, TestCase
+from django.test import TestCase
 from choir.repertory import models
 from . import factories
 
 
-class SongModelTest(SimpleTestCase):
+class SongModelTest(TestCase):
     def test_str(self):
         song = models.Song(name='Let it be')
         self.assertEqual(str(song), 'Let it be')
+
+    def test_get_public_files(self):
+        song = factories.SongFactory(slug='kyrie-eleison')
+        songfile_basso = factories.SongFileFactory(song=song, type='basso')
+        songfile_chords = factories.SongFileFactory(song=song, type='chords')
+        files = song.get_public_files()
+        self.assertEqual(len(files), 1)
+        self.assertNotIn(songfile_basso, files)
+        self.assertIn(songfile_chords, files)
+
+    def test_get_private_files(self):
+        song = factories.SongFactory(slug='kyrie-eleison')
+        songfile_basso = factories.SongFileFactory(song=song, type='basso')
+        songfile_chords = factories.SongFileFactory(song=song, type='chords')
+        files = song.get_private_files()
+        self.assertIn(songfile_basso, files)
+        self.assertNotIn(songfile_chords, files)
 
 
 class GetSongFileNameTest(TestCase):

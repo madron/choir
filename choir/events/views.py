@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.utils import timezone
 from django.views.generic import DetailView, ListView
 from choir.events import models
@@ -14,6 +15,7 @@ class EventDetailView(DetailView):
         context = super().get_context_data(*args, **kwargs)
         event = context['event']
         context['choir_section'] = CHOIR_SECTION
+        context['base_url'] = settings.BASE_URL
         if event.type == 'rehearsal':
             context['title'] = event.get_type_display()
         else:

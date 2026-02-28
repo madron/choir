@@ -64,12 +64,6 @@ class Song(models.Model):
             files[file.type] = file
         return [files.get(x[0], None) for x in type_choices]
 
-    def get_files(self, type_choices):
-        files = dict()
-        for file in self.songfile_set.all():
-            files[file.type] = file
-        return [files.get(x[0], None) for x in type_choices]
-
     def get_public_files(self):
         return self.get_files(PUBLIC_SONG_FILE_TYPES)
 
@@ -91,14 +85,11 @@ class Song(models.Model):
             return str(self.score_number or '')
 
 
-def get_song_file_name(instance, filename):
-    song = instance.song
-    prefix, extension = splitext(filename)
+def get_song_file_name(song_file, filename):
+    _, extension = splitext(filename)
     extension = extension.lower().strip('.')
     extension = EXTENSIONS.get(extension, extension)
-    prefix = 'songfile/%s' % song.slug
-    type =  SONG_FILE_TYPE[instance.type].lower()
-    return '{}-{}.{}'.format(prefix, type, extension)
+    return 'songfile/{}.{}'.format(song_file.get_slug(), extension)
 
 
 class SongFile(models.Model):
@@ -131,6 +122,10 @@ class SongFile(models.Model):
         return mark_safe('<a href="{}" title="{}" data-content="{}">{}</a>'.format(
             self.file.url, title, content, label))
     get_link.allow_tags = True
+
+    def get_slug(self):
+        type =  SONG_FILE_TYPE[self.type].lower()
+        return '{}-{}'.format(self.song.slug, type)
 
 
 @receiver(pre_delete, sender=SongFile)
