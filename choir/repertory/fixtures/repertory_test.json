@@ -62,11 +62,20 @@
         }
     },
     {
+        "pk": 10,
+        "model": "repertory.songfile",
+        "fields": {
+            "type": "choir",
+            "file": "songfile/kyrie-eleison-choir.mp3",
+            "song": 1
+        }
+    },
+    {
         "pk": 11,
         "model": "repertory.songfile",
         "fields": {
             "type": "soprano",
-            "file": "songfile/kyrie-eleison-soprani.mp3",
+            "file": "songfile/kyrie-eleison-soprano.mp3",
             "song": 1
         }
     },
@@ -75,7 +84,7 @@
         "model": "repertory.songfile",
         "fields": {
             "type": "contralto",
-            "file": "songfile/kyrie-eleison-contralti.mp3",
+            "file": "songfile/kyrie-eleison-contralto.mp3",
             "song": 1
         }
     },
@@ -84,7 +93,7 @@
         "model": "repertory.songfile",
         "fields": {
             "type": "tenore",
-            "file": "songfile/kyrie-eleison-tenori.mp3",
+            "file": "songfile/kyrie-eleison-tenoro.mp3",
             "song": 1
         }
     },
@@ -93,7 +102,16 @@
         "model": "repertory.songfile",
         "fields": {
             "type": "basso",
-            "file": "songfile/kyrie-eleison-bassi.mp3",
+            "file": "songfile/kyrie-eleison-basso.mp3",
+            "song": 1
+        }
+    },
+    {
+        "pk": 15,
+        "model": "repertory.songfile",
+        "fields": {
+            "type": "score",
+            "file": "songfile/kyrie-eleison-score.pdf",
             "song": 1
         }
     }

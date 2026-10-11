@@ -22,53 +22,27 @@
             <th scope="col" class="centered">{% translate "Page" %}</th>
             <th scope="col" class="centered">{% translate "Name" %}</th>
             <th scope="col" class="centered">{% translate "Score Number" %}</th>
-            <th scope="col" class="centered">{% translate "Soloist" %}</th>
+            <th scope="col" class="centered">{% translate "Soloist" %} {{ sections }}</th>
+            {% for section, section_name in choir_section_choices %}
+                <th scope="col" class="centered">{{ section_name }}</th>
+            {% endfor %}
         </tr>
     </thead>
     <tbody>
-        {% for eventsong in event.eventsong_set.all %}
-
+        {% for song in songs %}
         <tr>
-            <td>{{ eventsong.section }}</td>
-            <td>{{ eventsong.song.number | default:"" }}</td>
-            <td>{{ eventsong.song.page | default:"" }}</td>
-            <td>{{ eventsong.song.name }}</td>
-            <td>{{ eventsong.song.score_number | default:"" }}</td>
-            <td>{{ eventsong.soloist }}</td>
+            <td>{{ song.eventsong.section }}</td>
+            <td>{{ song.number }}</td>
+            <td>{{ song.page }}</td>
+            <td>{% if song.choir_player_url %}<a href="{{ song.choir_player_url }}">{{ song.name }}</a>{% else %}{{ song.name }}{% endif %}</td>
+            <td>{% if song.score_file %}{{ song.score_file.get_link }}{% else %}{{ song.score_number }}{% endif %}</td>
+            <td>{{ song.eventsong.soloist }}</td>
+            {% for url in song.choir_section_player_urls %}
+                <td>{% if url %}<a href="{{ url }}"><span class="mdi mdi-music"></span></a>{% endif %}</td>
+            {% endfor %}
         </tr>
         {% endfor %}
     </tbody>
 </table>
-
-
-{% for section, section_name in choir_section.items %}
-<h2 id="{{ section }}">{{ section_name }}</h2>
-<div><a href="{{ base_url }}{% url 'events:event_detail' event.slug %}#{{ section }}">{{ base_url }}{% url 'events:event_detail' event.slug %}#{{ section }}</a></div>
-<div>{{ title }}</div>
-<div>{{ event.date|date:"l d F G:i" }}</div>
-<div>{{ event.location }}</div>
-<ul>
-    {% for eventsong in event.eventsong_set.all %}
-        {% get_eventsong_section_songfile eventsong section as songfile %}
-        <li>
-            <div>
-                {% if songfile %}
-                    <a href="{% url 'player:index' songfile.get_slug %}">{{ eventsong.song.name }}</a>
-                {% else %}
-                    {{ eventsong.song.name }}
-                {% endif %}
-            </div>
-            {% for file in eventsong.song.songfile_set.all %}
-                {% if file.type == 'score' %}
-                <div><a href="{{ file.file.url }}">{{ file.file.url }}</a></div>
-                {% endif %}
-                {% if file.type == section %}
-                <div><a href="{{ file.file.url }}">{{ file.file.url }}</a></div>
-                {% endif %}
-            {% endfor %}
-        </li>
-    {% endfor %}
-</ul>
-{% endfor %}
 
 {% endblock %}

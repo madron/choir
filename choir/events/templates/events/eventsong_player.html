@@ -1,0 +1,28 @@
+{% extends "site_base.html" %}
+{% load i18n %}
+
+{% block scripts %}
+  <script src="https://unpkg.com/wavesurfer.js@7"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const ws = WaveSurfer.create({
+        container: '#waveform',
+        mediaControls: true,
+        url: '{{ audio_file_prefix }}{{ file_slug }}.mp3'
+    })
+      ws.on('ready', () => {/* ws.play() if you want autoplay */})
+    })
+  </script>
+{% endblock %}
+
+{% block navbar_apps %}
+{{ block.super }}
+<div class="navbar-nav">
+    <a class="nav-link" href="{% url 'events:event_detail' event.slug %}">{{ event.get_title }} {{ event }}</a>
+</div>
+{% endblock %}
+
+{% block content %}
+  <h3>{{ object }} - {{ section_name }}</h3>
+  <div id="waveform"></div>
+{% endblock %}

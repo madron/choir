@@ -70,3 +70,16 @@ class EventSong(models.Model):
 
     def __str__(self):
         return self.song.name if self.song else ''
+
+    def get_player_urls(self, choir_sections):
+        urls = []
+        existing_choir_sections = []
+        for songfile in self.song.songfile_set.filter(type__in=choir_sections):
+            existing_choir_sections.append(songfile.type)
+        for choir_section in choir_sections:
+            if choir_section in existing_choir_sections:
+                url = reverse('events:player', args=(self.event.slug, self.song.slug, choir_section))
+            else:
+                url = ''
+            urls.append(url)
+        return urls
