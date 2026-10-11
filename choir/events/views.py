@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.http import Http404
+from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from django.views.generic import DetailView, ListView
 from choir.events import models
@@ -70,12 +71,13 @@ class EventSongPlayerView(DetailView):
         return obj
 
     def get_context_data(self, *args, **kwargs):
+        from choir.repertory.models import SongFile
         context = super().get_context_data(*args, **kwargs)
-        song_slug = self.kwargs['song_slug']
         section = self.kwargs['section']
-        context['song_slug'] = song_slug
+        event_song = context['object']
+        song_file = get_object_or_404(SongFile, song=event_song.song, type=section)
         context['section_name'] = SONG_FILE_TYPE[section]
-        context['event'] = context['object'].event
-        context['file_slug'] = '{}-{}'.format(song_slug, section)
+        context['event'] = event_song.event
+        context['song_file'] = song_file
         context['audio_file_prefix'] = settings.PLAYER_AUDIO_FILE_PREFIX
         return context
