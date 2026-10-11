@@ -10,7 +10,6 @@ urlpatterns = [
     path('auth/', include('authentication.urls')),
     path('events/', include(('choir.events.urls', 'events'), namespace='events')),
     path('repertory/', include(('choir.repertory.urls', 'repertory'), namespace='repertory')),
-    path('player/', include(('choir.player.urls', 'player'), namespace='player')),
     path('', RedirectView.as_view(pattern_name='repertory:song_list'), name='home'),
 ]
 
