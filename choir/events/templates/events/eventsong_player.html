@@ -8,7 +8,7 @@
       const ws = WaveSurfer.create({
         container: '#waveform',
         mediaControls: true,
-        url: '{{ audio_file_prefix }}{{ song_file.get_absolute_url }}'
+        url: '{{ song_file.get_absolute_url }}'
     })
       ws.on('ready', () => {/* ws.play() if you want autoplay */})
     })

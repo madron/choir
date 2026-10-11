@@ -79,5 +79,4 @@ class EventSongPlayerView(DetailView):
         context['section_name'] = SONG_FILE_TYPE[section]
         context['event'] = event_song.event
         context['song_file'] = song_file
-        context['audio_file_prefix'] = settings.PLAYER_AUDIO_FILE_PREFIX
         return context
